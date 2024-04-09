@@ -1,16 +1,16 @@
 import React, { Component } from "react";
 import {
+  Link,
+  Route,
   BrowserRouter as Router,
   Routes,
-  Route,
-  Link,
   useParams,
 } from "react-router-dom";
 
-import reactLogo from "./images/react.svg";
-import playLogo from "./images/play.svg";
-import scalaLogo from "./images/scala.svg";
 import Client from "./Client";
+import playLogo from "./images/play.svg";
+import reactLogo from "./images/react.svg";
+import scalaLogo from "./images/scala.svg";
 
 import "./App.css";
 
