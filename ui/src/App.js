@@ -11,6 +11,7 @@ import Client from "./Client";
 import playLogo from "./images/play.svg";
 import reactLogo from "./images/react.svg";
 import scalaLogo from "./images/scala.svg";
+import Chart from './components/chart';
 
 import "./App.css";
 
@@ -42,14 +43,7 @@ class App extends Component {
             <Link to="scala">
               <img width="400" height="400" src={scalaLogo} alt="Scala Logo" />
             </Link>
-            <Link to="play">
-              <img
-                width="400"
-                height="400"
-                src={playLogo}
-                alt="Play Framework Logo"
-              />
-            </Link>
+            <Chart />
             <Link to="react">
               <img width="400" height="400" src={reactLogo} alt="React Logo" />
             </Link>

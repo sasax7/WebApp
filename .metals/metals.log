@@ -400,3 +400,4 @@ Caused by: java.io.IOException: Eine vorhandene Verbindung wurde vom Remotehost 
 	at java.lang.Thread.run(Thread.java:829)
 
 2024.04.09 17:11:44 INFO  Exiting server
+2024.04.10 07:43:56 INFO  Started: Metals version 1.2.2+124-bdbed61c-SNAPSHOT in folders 'C:\Users\sti\OneDrive - Leicom AG\Desktop\ElionaApp\app\WebApp' for client Visual Studio Code - Insiders 1.89.0-insider.
