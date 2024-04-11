@@ -14,6 +14,7 @@ import scalaLogo from "./images/scala.svg";
 import Chart from './components/chart';
 
 import "./App.css";
+import ChartLayout from "./components/chartLayout";
 
 const Tech = () => {
   const params = useParams();
@@ -43,7 +44,7 @@ class App extends Component {
             <Link to="scala">
               <img width="400" height="400" src={scalaLogo} alt="Scala Logo" />
             </Link>
-            <Chart />
+            <ChartLayout />
             <Link to="react">
               <img width="400" height="400" src={reactLogo} alt="React Logo" />
             </Link>
