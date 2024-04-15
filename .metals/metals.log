@@ -2670,3 +2670,326 @@ java.lang.RuntimeException: The server did not start, got FailedToOpenBspConnect
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
 	at java.lang.Thread.run(Thread.java:840)
 
+2024.04.15 13:42:01 INFO  Shutting down server
+2024.04.15 13:42:01 INFO  shutting down Metals
+2024.04.15 13:42:01 INFO  Exiting server
+2024.04.15 13:53:04 INFO  Started: Metals version 1.2.2+131-1f16fcc1-SNAPSHOT in folders 'C:\Users\sti\OneDrive - Leicom AG\Desktop\ElionaApp\app\WebApp' for client Visual Studio Code - Insiders 1.89.0-insider.
+2024.04.15 13:53:05 ERROR org.h2.jdbc.JdbcSQLNonTransientConnectionException: Datei fehlerhaft beim Lesen des Datensatzes: "C:/Users/sti/OneDrive - Leicom AG/Desktop/ElionaApp/app/WebApp/.metals/metals.mv.db". Mögliche Lösung: Recovery Werkzeug verwenden
+File corrupted while reading record: "C:/Users/sti/OneDrive - Leicom AG/Desktop/ElionaApp/app/WebApp/.metals/metals.mv.db". Possible solution: use the recovery tool [90030-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:690)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.mvstore.db.Store.convertMVStoreException(Store.java:163)
+	at org.h2.mvstore.db.Store.<init>(Store.java:142)
+	at org.h2.engine.Database.<init>(Database.java:326)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:343)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:125)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql.DriverManager.getConnection(DriverManager.java:681)
+	at java.sql.DriverManager.getConnection(DriverManager.java:229)
+	at scala.meta.internal.metals.Tables.upgradeIfNeeded(Tables.scala:181)
+	at scala.meta.internal.metals.Tables.persistentConnection(Tables.scala:148)
+	at scala.meta.internal.metals.Tables.tryAutoServer(Tables.scala:91)
+	at scala.meta.internal.metals.Tables.connect(Tables.scala:55)
+	at scala.meta.internal.metals.Tables.connection(Tables.scala:84)
+	at scala.meta.internal.metals.Tables.$anonfun$fingerprints$1(Tables.scala:44)
+	at scala.meta.internal.metals.Fingerprints.load(Fingerprints.scala:52)
+	at scala.meta.internal.metals.MetalsLspService.$anonfun$loadFingerPrints$1(MetalsLspService.scala:881)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.scala:18)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:687)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:840)
+Caused by: org.h2.mvstore.MVStoreException: File is corrupted - unable to recover a valid set of chunks [2.2.224/6]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.RandomAccessStore.readStoreHeader(RandomAccessStore.java:320)
+	at org.h2.mvstore.FileStore.start(FileStore.java:916)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:289)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2035)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	at org.h2.engine.Database.<init>(Database.java:326)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:343)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:125)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql.DriverManager.getConnection(DriverManager.java:681)
+	at java.sql.DriverManager.getConnection(DriverManager.java:229)
+	at scala.meta.internal.metals.Tables.upgradeIfNeeded(Tables.scala:181)
+	at scala.meta.internal.metals.Tables.persistentConnection(Tables.scala:148)
+	at scala.meta.internal.metals.Tables.tryAutoServer(Tables.scala:91)
+	at scala.meta.internal.metals.Tables.connect(Tables.scala:55)
+	at scala.meta.internal.metals.Tables.connection(Tables.scala:84)
+	at scala.meta.internal.metals.Tables.$anonfun$fingerprints$1(Tables.scala:44)
+	at scala.meta.internal.metals.Fingerprints.load(Fingerprints.scala:52)
+	at scala.meta.internal.metals.MetalsLspService.$anonfun$loadFingerPrints$1(MetalsLspService.scala:881)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.scala:18)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:687)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:840)
+
+2024.04.15 13:53:05 ERROR unable to setup persistent H2 database with AUTO_SERVER=false, falling back to in-memory database. This means you may be redundantly asked to execute 'Import build', even if it's not needed. Also, code navigation will not work for existing files in the .metals/readonly/ directory. To fix this problem, make sure you only have one running Metals server in the directory 'C:\Users\sti\OneDrive - Leicom AG\Desktop\ElionaApp\app\WebApp'.
+org.h2.jdbc.JdbcSQLNonTransientConnectionException: Datei fehlerhaft beim Lesen des Datensatzes: "C:/Users/sti/OneDrive - Leicom AG/Desktop/ElionaApp/app/WebApp/.metals/metals.mv.db". Mögliche Lösung: Recovery Werkzeug verwenden
+File corrupted while reading record: "C:/Users/sti/OneDrive - Leicom AG/Desktop/ElionaApp/app/WebApp/.metals/metals.mv.db". Possible solution: use the recovery tool [90030-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:690)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.mvstore.db.Store.convertMVStoreException(Store.java:163)
+	at org.h2.mvstore.db.Store.<init>(Store.java:142)
+	at org.h2.engine.Database.<init>(Database.java:326)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:343)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:125)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql.DriverManager.getConnection(DriverManager.java:681)
+	at java.sql.DriverManager.getConnection(DriverManager.java:229)
+	at scala.meta.internal.metals.Tables.upgradeIfNeeded(Tables.scala:181)
+	at scala.meta.internal.metals.Tables.persistentConnection(Tables.scala:148)
+	at scala.meta.internal.metals.Tables.tryNoAutoServer(Tables.scala:108)
+	at scala.meta.internal.metals.Tables.tryAutoServer(Tables.scala:102)
+	at scala.meta.internal.metals.Tables.connect(Tables.scala:55)
+	at scala.meta.internal.metals.Tables.connection(Tables.scala:84)
+	at scala.meta.internal.metals.Tables.$anonfun$fingerprints$1(Tables.scala:44)
+	at scala.meta.internal.metals.Fingerprints.load(Fingerprints.scala:52)
+	at scala.meta.internal.metals.MetalsLspService.$anonfun$loadFingerPrints$1(MetalsLspService.scala:881)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.scala:18)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:687)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:840)
+Caused by: org.h2.mvstore.MVStoreException: File is corrupted - unable to recover a valid set of chunks [2.2.224/6]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.RandomAccessStore.readStoreHeader(RandomAccessStore.java:320)
+	at org.h2.mvstore.FileStore.start(FileStore.java:916)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:289)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2035)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	at org.h2.engine.Database.<init>(Database.java:326)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:343)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:125)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql.DriverManager.getConnection(DriverManager.java:681)
+	at java.sql.DriverManager.getConnection(DriverManager.java:229)
+	at scala.meta.internal.metals.Tables.upgradeIfNeeded(Tables.scala:181)
+	at scala.meta.internal.metals.Tables.persistentConnection(Tables.scala:148)
+	at scala.meta.internal.metals.Tables.tryNoAutoServer(Tables.scala:108)
+	at scala.meta.internal.metals.Tables.tryAutoServer(Tables.scala:102)
+	at scala.meta.internal.metals.Tables.connect(Tables.scala:55)
+	at scala.meta.internal.metals.Tables.connection(Tables.scala:84)
+	at scala.meta.internal.metals.Tables.$anonfun$fingerprints$1(Tables.scala:44)
+	at scala.meta.internal.metals.Fingerprints.load(Fingerprints.scala:52)
+	at scala.meta.internal.metals.MetalsLspService.$anonfun$loadFingerPrints$1(MetalsLspService.scala:881)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.scala:18)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:687)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:840)
+
+SLF4J: Class path contains multiple SLF4J providers.
+SLF4J: Found provider [scribe.slf4j.ScribeServiceProvider@933c696]
+SLF4J: Found provider [ch.qos.logback.classic.spi.LogbackServiceProvider@235b12d1]
+SLF4J: See https://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual provider is of type [scribe.slf4j.ScribeServiceProvider@933c696]
+2024.04.15 13:53:05 WARN  Flyway upgrade recommended: H2 2.2.224 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
+2024.04.15 13:53:06 INFO  Attempting to connect to the build server...
+2024.04.15 13:53:08 ERROR Starting the bsp launcher for bloop...
+2024.04.15 13:53:08 ERROR Opening a bsp server connection with 'bsp --protocol tcp --port 39382'...
+2024.04.15 13:53:08 ERROR Waiting for the bsp connection to come up...
+2024.04.15 13:53:08 ERROR error: The command bsp --protocol tcp --port 39382 returned with an error
+2024.04.15 13:53:08 ERROR > [0m[33m[W][0m Scala instance jar C:\Users\Samuel\AppData\Local\Coursier\Cache\v1\https\repo1.maven.org\maven2\org\scala-lang\scala-library\2.13.13\scala-library-2.13.13.jar doesn't exist!
+2024.04.15 13:53:08 ERROR > [0m[33m[W][0m Scala instance jar C:\Users\Samuel\AppData\Local\Coursier\Cache\v1\https\repo1.maven.org\maven2\org\scala-lang\scala-compiler\2.13.13\scala-compiler-2.13.13.jar doesn't exist!
+2024.04.15 13:53:08 ERROR > [0m[33m[W][0m Scala instance jar C:\Users\Samuel\AppData\Local\Coursier\Cache\v1\https\repo1.maven.org\maven2\org\scala-lang\scala-reflect\2.13.13\scala-reflect-2.13.13.jar doesn't exist!
+2024.04.15 13:53:08 ERROR > [0m[33m[W][0m Scala instance jar C:\Users\Samuel\AppData\Local\Coursier\Cache\v1\https\repo1.maven.org\maven2\io\github\java-diff-utils\java-diff-utils\4.12\java-diff-utils-4.12.jar doesn't exist!
+2024.04.15 13:53:08 ERROR > [0m[33m[W][0m Scala instance jar C:\Users\Samuel\AppData\Local\Coursier\Cache\v1\https\repo1.maven.org\maven2\org\jline\jline\3.24.1\jline-3.24.1.jar doesn't exist!
+2024.04.15 13:53:08 ERROR > [0m[33m[W][0m Scala instance jar C:\Users\Samuel\AppData\Local\Coursier\Cache\v1\https\repo1.maven.org\maven2\net\java\dev\jna\jna\5.13.0\jna-5.13.0.jar doesn't exist!
+2024.04.15 13:53:08 ERROR > [0m[31m[E][0m Failed to load project from c:\Users\sti\OneDrive - Leicom AG\Desktop\ElionaApp\app\WebApp\.bloop\root.json
+2024.04.15 13:53:08 ERROR error: The launcher failed to establish a bsp connection, aborting...
+2024.04.15 13:53:08 ERROR Failed to connect with build server, no functionality will work.
+java.lang.RuntimeException: The server did not start, got FailedToOpenBspConnection
+	at bloop.launcher.LauncherMain.failPromise$1(Launcher.scala:92)
+	at bloop.launcher.LauncherMain.runLauncher(Launcher.scala:119)
+	at scala.meta.internal.metals.BloopServers$$anon$2.run(BloopServers.scala:355)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:840)
+
+2024.04.15 13:55:47 INFO  Shutting down server
+2024.04.15 13:55:47 INFO  shutting down Metals
+2024.04.15 13:55:47 INFO  Exiting server
+2024.04.15 13:56:27 INFO  Started: Metals version 1.2.2+131-1f16fcc1-SNAPSHOT in folders 'C:\Users\sti\OneDrive - Leicom AG\Desktop\ElionaApp\app\WebApp' for client Visual Studio Code - Insiders 1.89.0-insider.
+2024.04.15 13:56:29 ERROR org.h2.jdbc.JdbcSQLNonTransientConnectionException: Datei fehlerhaft beim Lesen des Datensatzes: "C:/Users/sti/OneDrive - Leicom AG/Desktop/ElionaApp/app/WebApp/.metals/metals.mv.db". Mögliche Lösung: Recovery Werkzeug verwenden
+File corrupted while reading record: "C:/Users/sti/OneDrive - Leicom AG/Desktop/ElionaApp/app/WebApp/.metals/metals.mv.db". Possible solution: use the recovery tool [90030-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:690)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.mvstore.db.Store.convertMVStoreException(Store.java:163)
+	at org.h2.mvstore.db.Store.<init>(Store.java:142)
+	at org.h2.engine.Database.<init>(Database.java:326)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:343)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:125)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql.DriverManager.getConnection(DriverManager.java:681)
+	at java.sql.DriverManager.getConnection(DriverManager.java:229)
+	at scala.meta.internal.metals.Tables.upgradeIfNeeded(Tables.scala:181)
+	at scala.meta.internal.metals.Tables.persistentConnection(Tables.scala:148)
+	at scala.meta.internal.metals.Tables.tryAutoServer(Tables.scala:91)
+	at scala.meta.internal.metals.Tables.connect(Tables.scala:55)
+	at scala.meta.internal.metals.Tables.connection(Tables.scala:84)
+	at scala.meta.internal.metals.Tables.$anonfun$fingerprints$1(Tables.scala:44)
+	at scala.meta.internal.metals.Fingerprints.load(Fingerprints.scala:52)
+	at scala.meta.internal.metals.MetalsLspService.$anonfun$loadFingerPrints$1(MetalsLspService.scala:881)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.scala:18)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:687)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:840)
+Caused by: org.h2.mvstore.MVStoreException: File is corrupted - unable to recover a valid set of chunks [2.2.224/6]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.RandomAccessStore.readStoreHeader(RandomAccessStore.java:320)
+	at org.h2.mvstore.FileStore.start(FileStore.java:916)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:289)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2035)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	at org.h2.engine.Database.<init>(Database.java:326)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:343)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:125)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql.DriverManager.getConnection(DriverManager.java:681)
+	at java.sql.DriverManager.getConnection(DriverManager.java:229)
+	at scala.meta.internal.metals.Tables.upgradeIfNeeded(Tables.scala:181)
+	at scala.meta.internal.metals.Tables.persistentConnection(Tables.scala:148)
+	at scala.meta.internal.metals.Tables.tryAutoServer(Tables.scala:91)
+	at scala.meta.internal.metals.Tables.connect(Tables.scala:55)
+	at scala.meta.internal.metals.Tables.connection(Tables.scala:84)
+	at scala.meta.internal.metals.Tables.$anonfun$fingerprints$1(Tables.scala:44)
+	at scala.meta.internal.metals.Fingerprints.load(Fingerprints.scala:52)
+	at scala.meta.internal.metals.MetalsLspService.$anonfun$loadFingerPrints$1(MetalsLspService.scala:881)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.scala:18)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:687)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:840)
+
+2024.04.15 13:56:29 ERROR unable to setup persistent H2 database with AUTO_SERVER=false, falling back to in-memory database. This means you may be redundantly asked to execute 'Import build', even if it's not needed. Also, code navigation will not work for existing files in the .metals/readonly/ directory. To fix this problem, make sure you only have one running Metals server in the directory 'C:\Users\sti\OneDrive - Leicom AG\Desktop\ElionaApp\app\WebApp'.
+org.h2.jdbc.JdbcSQLNonTransientConnectionException: Datei fehlerhaft beim Lesen des Datensatzes: "C:/Users/sti/OneDrive - Leicom AG/Desktop/ElionaApp/app/WebApp/.metals/metals.mv.db". Mögliche Lösung: Recovery Werkzeug verwenden
+File corrupted while reading record: "C:/Users/sti/OneDrive - Leicom AG/Desktop/ElionaApp/app/WebApp/.metals/metals.mv.db". Possible solution: use the recovery tool [90030-224]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:690)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:489)
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.mvstore.db.Store.convertMVStoreException(Store.java:163)
+	at org.h2.mvstore.db.Store.<init>(Store.java:142)
+	at org.h2.engine.Database.<init>(Database.java:326)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:343)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:125)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql.DriverManager.getConnection(DriverManager.java:681)
+	at java.sql.DriverManager.getConnection(DriverManager.java:229)
+	at scala.meta.internal.metals.Tables.upgradeIfNeeded(Tables.scala:181)
+	at scala.meta.internal.metals.Tables.persistentConnection(Tables.scala:148)
+	at scala.meta.internal.metals.Tables.tryNoAutoServer(Tables.scala:108)
+	at scala.meta.internal.metals.Tables.tryAutoServer(Tables.scala:102)
+	at scala.meta.internal.metals.Tables.connect(Tables.scala:55)
+	at scala.meta.internal.metals.Tables.connection(Tables.scala:84)
+	at scala.meta.internal.metals.Tables.$anonfun$fingerprints$1(Tables.scala:44)
+	at scala.meta.internal.metals.Fingerprints.load(Fingerprints.scala:52)
+	at scala.meta.internal.metals.MetalsLspService.$anonfun$loadFingerPrints$1(MetalsLspService.scala:881)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.scala:18)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:687)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:840)
+Caused by: org.h2.mvstore.MVStoreException: File is corrupted - unable to recover a valid set of chunks [2.2.224/6]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:996)
+	at org.h2.mvstore.RandomAccessStore.readStoreHeader(RandomAccessStore.java:320)
+	at org.h2.mvstore.FileStore.start(FileStore.java:916)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:289)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2035)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	at org.h2.engine.Database.<init>(Database.java:326)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:343)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:125)
+	at org.h2.Driver.connect(Driver.java:59)
+	at java.sql.DriverManager.getConnection(DriverManager.java:681)
+	at java.sql.DriverManager.getConnection(DriverManager.java:229)
+	at scala.meta.internal.metals.Tables.upgradeIfNeeded(Tables.scala:181)
+	at scala.meta.internal.metals.Tables.persistentConnection(Tables.scala:148)
+	at scala.meta.internal.metals.Tables.tryNoAutoServer(Tables.scala:108)
+	at scala.meta.internal.metals.Tables.tryAutoServer(Tables.scala:102)
+	at scala.meta.internal.metals.Tables.connect(Tables.scala:55)
+	at scala.meta.internal.metals.Tables.connection(Tables.scala:84)
+	at scala.meta.internal.metals.Tables.$anonfun$fingerprints$1(Tables.scala:44)
+	at scala.meta.internal.metals.Fingerprints.load(Fingerprints.scala:52)
+	at scala.meta.internal.metals.MetalsLspService.$anonfun$loadFingerPrints$1(MetalsLspService.scala:881)
+	at scala.runtime.java8.JFunction0$mcV$sp.apply(JFunction0$mcV$sp.scala:18)
+	at scala.concurrent.Future$.$anonfun$apply$1(Future.scala:687)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:840)
+
+SLF4J: Class path contains multiple SLF4J providers.
+SLF4J: Found provider [scribe.slf4j.ScribeServiceProvider@1fedea74]
+SLF4J: Found provider [ch.qos.logback.classic.spi.LogbackServiceProvider@74e3d4ef]
+SLF4J: See https://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual provider is of type [scribe.slf4j.ScribeServiceProvider@1fedea74]
+2024.04.15 13:56:30 WARN  Flyway upgrade recommended: H2 2.2.224 is newer than this version of Flyway and support has not been tested. The latest supported version of H2 is 2.2.220.
+2024.04.15 13:56:31 INFO  Attempting to connect to the build server...
+2024.04.15 13:56:32 ERROR Starting the bsp launcher for bloop...
+2024.04.15 13:56:32 ERROR Opening a bsp server connection with 'bsp --protocol tcp --port 44955'...
+2024.04.15 13:56:32 ERROR Waiting for the bsp connection to come up...
+2024.04.15 13:56:32 ERROR error: The command bsp --protocol tcp --port 44955 returned with an error
+2024.04.15 13:56:32 ERROR > [0m[33m[W][0m Scala instance jar C:\Users\Samuel\AppData\Local\Coursier\Cache\v1\https\repo1.maven.org\maven2\org\scala-lang\scala-library\2.13.13\scala-library-2.13.13.jar doesn't exist!
+2024.04.15 13:56:32 ERROR > [0m[33m[W][0m Scala instance jar C:\Users\Samuel\AppData\Local\Coursier\Cache\v1\https\repo1.maven.org\maven2\org\scala-lang\scala-compiler\2.13.13\scala-compiler-2.13.13.jar doesn't exist!
+2024.04.15 13:56:32 ERROR > [0m[33m[W][0m Scala instance jar C:\Users\Samuel\AppData\Local\Coursier\Cache\v1\https\repo1.maven.org\maven2\org\scala-lang\scala-reflect\2.13.13\scala-reflect-2.13.13.jar doesn't exist!
+2024.04.15 13:56:32 ERROR > [0m[33m[W][0m Scala instance jar C:\Users\Samuel\AppData\Local\Coursier\Cache\v1\https\repo1.maven.org\maven2\io\github\java-diff-utils\java-diff-utils\4.12\java-diff-utils-4.12.jar doesn't exist!
+2024.04.15 13:56:32 ERROR > [0m[33m[W][0m Scala instance jar C:\Users\Samuel\AppData\Local\Coursier\Cache\v1\https\repo1.maven.org\maven2\org\jline\jline\3.24.1\jline-3.24.1.jar doesn't exist!
+2024.04.15 13:56:32 ERROR > [0m[33m[W][0m Scala instance jar C:\Users\Samuel\AppData\Local\Coursier\Cache\v1\https\repo1.maven.org\maven2\net\java\dev\jna\jna\5.13.0\jna-5.13.0.jar doesn't exist!
+2024.04.15 13:56:32 ERROR > [0m[31m[E][0m Failed to load project from c:\Users\sti\OneDrive - Leicom AG\Desktop\ElionaApp\app\WebApp\.bloop\root-test.json
+2024.04.15 13:56:32 ERROR error: The launcher failed to establish a bsp connection, aborting...
+2024.04.15 13:56:31 ERROR Failed to connect with build server, no functionality will work.
+java.lang.RuntimeException: The server did not start, got FailedToOpenBspConnection
+	at bloop.launcher.LauncherMain.failPromise$1(Launcher.scala:92)
+	at bloop.launcher.LauncherMain.runLauncher(Launcher.scala:119)
+	at scala.meta.internal.metals.BloopServers$$anon$2.run(BloopServers.scala:355)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:840)
+
+Apr. 15, 2024 2:03:55 PM org.eclipse.lsp4j.jsonrpc.services.GenericEndpoint notify
+INFORMATION: Unsupported notification method: $/setTrace
+2024.04.15 14:12:29 INFO  Shutting down server
+2024.04.15 14:12:29 INFO  shutting down Metals
+2024.04.15 14:12:29 INFO  Exiting server

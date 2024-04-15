@@ -1,12 +1,13 @@
-
+// ChartLayout.js
 import React, { useState, useEffect } from 'react';
 import Chart from './chart';
 import Stack from '@mui/material/Stack';
-import { ToggleButton, ToggleButtonGroup, Select, MenuItem } from '@mui/material';
+import Grid from '@mui/material/Grid';
+import { FormControl, InputLabel, Select, MenuItem } from '@mui/material';
+import TradeInputs from './TradeInputs';
 
 const ChartLayout = () => {
   const initialNumCharts = localStorage.getItem('numCharts') || 1;
-  const [selectedTool, setSelectedTool] = useState(null);
   const [numCharts, setNumCharts] = useState(initialNumCharts);
   const [selectedChart, setSelectedChart] = useState(null);
   const [layout, setLayout] = useState('row'); 
@@ -14,10 +15,6 @@ const ChartLayout = () => {
   useEffect(() => {
     localStorage.setItem('numCharts', numCharts);
   }, [numCharts]);
-
-  const handleToolChange = (event, newTool) => {
-    setSelectedTool(newTool);
-  };
 
   const handleNumChartsChange = (event) => {
     setNumCharts(event.target.value);
@@ -27,50 +24,57 @@ const ChartLayout = () => {
     setSelectedChart(index);
   };
 
-  const handleLayoutChange = (event, newLayout) => {
-    setLayout(newLayout);
+  const handleLayoutChange = (event) => {
+    setLayout(event.target.value);
   };
+
+  const charts = Array.from({ length: numCharts }, (_, i) => (
+    <Chart 
+      key={i} 
+      isSelected={i === selectedChart} 
+      onSelect={() => handleChartSelect(i)}
+    />
+  ));
 
   return (
     <Stack spacing={2} direction="column">
-      <ToggleButtonGroup
-        value={layout}
-        exclusive
-        onChange={handleLayoutChange}
-      >
-        <ToggleButton value="row">Row</ToggleButton>
-        <ToggleButton value="column">Column</ToggleButton>
-        <ToggleButton value="grid">Grid</ToggleButton>
-      </ToggleButtonGroup>
-      <Stack spacing={2} direction= "row">
-        <Stack spacing={2} direction="column">
-          <ToggleButtonGroup
-            value={selectedTool}
-            exclusive
-            onChange={handleToolChange}
-            orientation="vertical" 
+      <Stack direction="row" spacing={2}>
+        <FormControl>
+          <InputLabel id="num-charts-label">Number of Charts</InputLabel>
+          <Select
+            labelId="num-charts-label"
+            id="num-charts-select"
+            value={numCharts}
+            onChange={handleNumChartsChange}
           >
-            <ToggleButton value="trendline">Trendline</ToggleButton>
-            <ToggleButton value="horizontalLine">Horizontal Line</ToggleButton>
-            <ToggleButton value="verticalLine">Vertical Line</ToggleButton>
-          </ToggleButtonGroup>
-          <Select value={numCharts} onChange={handleNumChartsChange}>
-            {[...Array(8).keys()].map((i) => (
-              <MenuItem key={i + 1} value={i + 1}>{i + 1}</MenuItem>
-            ))}
+            <MenuItem value={1}>1</MenuItem>
+            <MenuItem value={2}>2</MenuItem>
+            <MenuItem value={3}>3</MenuItem>
+            <MenuItem value={4}>4</MenuItem>
+            <MenuItem value={5}>5</MenuItem>
+            <MenuItem value={6}>6</MenuItem>
+            <MenuItem value={7}>7</MenuItem>
+            <MenuItem value={8}>8</MenuItem>
           </Select>
-        </Stack>
-        <div style={{ display: 'flex', flexWrap: 'wrap', width: '100%', height: '100vh' }}>
-          {Array(numCharts).fill().map((_, i) => (
-            <div key={i} style={{ flex: '1 0 auto', minWidth: '300px' }}>
-              <Chart 
-                isSelected={i === selectedChart} 
-                onSelect={() => handleChartSelect(i)}
-              />
-            </div>
-          ))}
-        </div>
+        </FormControl>
+        <FormControl>
+          <InputLabel id="layout-label">Layout</InputLabel>
+          <Select
+            labelId="layout-label"
+            id="layout-select"
+            value={layout}
+            onChange={handleLayoutChange}
+          >
+            <MenuItem value="row">Row</MenuItem>
+            <MenuItem value="column">Column</MenuItem>
+            <MenuItem value="grid">Grid</MenuItem>
+          </Select>
+        </FormControl>
       </Stack>
+      {layout === 'row' && <Stack direction="row">{charts}</Stack>}
+      {layout === 'column' && <Stack direction="column">{charts}</Stack>}
+      {layout === 'grid' && <Grid container spacing={2}>{charts.map((chart, i) => <Grid item xs={6} key={i}>{chart}</Grid>)}</Grid>}
+      <TradeInputs />
     </Stack>
   );
 };

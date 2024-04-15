@@ -60,7 +60,8 @@ function ChartComponent({ isSelected, onSelect }) {
       style={{ 
        width: '100%',
         height: '100%', 
-        border: isSelected ? '2px solid blue' : 'none' 
+        minHeight: '600px',
+        border: isSelected ? '2px solid blue' : '1px solid gray' 
       }} 
       onClick={onSelect}
     >

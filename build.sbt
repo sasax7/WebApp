@@ -17,6 +17,7 @@ scalaVersion := "2.13.13"
 
 libraryDependencies += guice
 libraryDependencies += "org.scalatestplus.play" %% "scalatestplus-play" % "5.1.0" % Test
+libraryDependencies += "org.postgresql" % "postgresql" % "42.3.1"
 
 addCommandAlias(
   "validateCode",
