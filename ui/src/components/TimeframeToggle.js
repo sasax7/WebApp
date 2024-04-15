@@ -14,12 +14,12 @@ const TimeframeToggle = ({ timeframe, onTimeframeChange }) => {
       exclusive
       onChange={handleTimeframeChange}
     >
-      <ToggleButton value="1m">1m</ToggleButton>
-      <ToggleButton value="5m">5m</ToggleButton>
-      <ToggleButton value="15m">15m</ToggleButton>
-      <ToggleButton value="1h">1h</ToggleButton>
-      <ToggleButton value="4h">4h</ToggleButton>
-      <ToggleButton value="1d">1d</ToggleButton>
+      <ToggleButton value={1}>1m</ToggleButton>
+      <ToggleButton value={5}>5m</ToggleButton>
+      <ToggleButton value={15}>15m</ToggleButton>
+      <ToggleButton value={60}>1h</ToggleButton>
+      <ToggleButton value={240}>4h</ToggleButton>
+      <ToggleButton value={1440}>1d</ToggleButton>
     </ToggleButtonGroup>
   );
 };
